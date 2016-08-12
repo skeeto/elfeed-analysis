@@ -19,8 +19,16 @@ invokes Emacs incorrectly, do this step manually instead:
 Then put these three files under the `data/` directory in this
 repository. This directory is only removed by the `distclean` target.
 
+## Screenshots
+
+![](http://i.imgur.com/iyqTOU5.png)
+
+![](http://i.imgur.com/w7etMiy.png)
+
+![](http://i.imgur.com/dAqRT8q.png)
+
 ## Dependencies
 
 * [Elfeed](https://github.com/skeeto/elfeed) with an established database
 * [SQLite](https://sqlite.org/) command shell (`sqlite3`)
-* [gnuplot](http://gnuplot.info/) (version 5.0 or higher works best)
+* [gnuplot](http://gnuplot.info/)
