@@ -1,11 +1,12 @@
 tags   = 'youtube blog comic emacs myself'
 width  = 1200
 height = 800
+color  = '#aa00bb'
 
 set terminal pngcairo size width, height
 set datafile separator ','
 set style fill solid noborder
-set linetype 1 lc rgb '#aa00bb'
+set linetype 1 lc rgb color
 set boxwidth 0.75
 
 set xtics 0, 1, 23
