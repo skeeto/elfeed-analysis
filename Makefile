@@ -1,9 +1,15 @@
-SQLITE = sqlite3
-GNUPLOT = gnuplot5
+EMACS   = emacs
+SQLITE  = sqlite3
+GNUPLOT = gnuplot
 
 all : graphs
 
-transient : process.sql
+## Can't use -batch: must leverage user's Elfeed configuration.
+data :
+	@mkdir -p data
+	$(EMACS) -nw -l export.el
+
+transient : process.sql data
 	@rm -rf $@
 	@mkdir -p $@
 	$(SQLITE) :memory: < $<
@@ -17,3 +23,6 @@ graphs : transient plot.gp
 
 clean :
 	rm -rf transient graphs
+
+distclean :
+	rm -rf data transient graphs
