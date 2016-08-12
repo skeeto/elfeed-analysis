@@ -12,7 +12,7 @@ set boxwidth 0.75
 set xtics 0, 1, 23
 do for [i = 1:words(tags)] {
   tag = word(tags, i)
-  infile = sprintf('< grep ^%s transient/hours.csv', tag)
+  infile = sprintf('< grep ^%s, transient/hours.csv', tag)
   outfile = sprintf('graphs/hours-%s.png', tag)
   set output outfile
   plot infile using 2:3 with boxes title tag
@@ -22,7 +22,7 @@ set xtics 0, 1, 6
 set xtics add ("Sun" 0, "Mon" 1, "Tue" 2, "Wed" 3, "Thu" 4, "Fri" 5, "Sat" 6)
 do for [i = 1:words(tags)] {
   tag = word(tags, i)
-  infile = sprintf('< grep ^%s transient/weekdays.csv', tag)
+  infile = sprintf('< grep ^%s, transient/weekdays.csv', tag)
   outfile = sprintf('graphs/weekdays-%s.png', tag)
   set output outfile
   plot infile using 2:3 with boxes title tag
@@ -33,7 +33,7 @@ set xtics add ("Jan" 1, "Feb" 2, "Mar" 3, "Apr" 4,  "May"  5, "Jun"  6, \
                "Jul" 7, "Aug" 8, "Sep" 9, "Oct" 10, "Nov" 11, "Dec" 12)
 do for [i = 1:words(tags)] {
   tag = word(tags, i)
-  infile = sprintf('< grep ^%s transient/months.csv', tag)
+  infile = sprintf('< grep ^%s, transient/months.csv', tag)
   outfile = sprintf('graphs/months-%s.png', tag)
   set output outfile
   plot infile using 2:3 with boxes title tag
@@ -44,7 +44,7 @@ set xtics 0, 10, 100
 set xrange [0:100]
 do for [i = 1:words(tags)] {
   tag = word(tags, i)
-  infile = sprintf('< grep ^%s transient/lengths-by-tag.csv', tag)
+  infile = sprintf('< grep ^%s, transient/lengths-by-tag.csv', tag)
   outfile = sprintf('graphs/lengths-%s.png', tag)
   set output outfile
   plot infile using 2:3 with boxes title tag
